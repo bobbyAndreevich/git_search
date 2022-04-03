@@ -1,0 +1,13 @@
+<resources>
+    <string name="server_client_id">749275272951-vc6i8563da652tf5kru4ne3fip801iuv.apps.googleusercontent.com</string>
+    <string name="app_name">Test</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_git_search">Find Git user</string>
+    <string name="menu_gallery">Logout</string>
+    <string name="login_label">Login</string>
+    <string name="find_git_user">Find Git User</string>
+    <string name="error_message_403">cannot load anymore data</string>
+</resources>
