@@ -1,4 +1,4 @@
-package com.example.presentation.ui.login
+package com.example.presentation.utils
 
 import android.content.Intent
 

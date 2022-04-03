@@ -1,4 +1,4 @@
-package com.example.presentation.ui.main
+package com.example.presentation.ui.main.views
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.presentation.R
 import com.example.presentation.dagger.DaggerApp
 import com.example.presentation.ui.login.LoginActivity
+import com.example.presentation.ui.main.viewmodels.MainActivityViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*

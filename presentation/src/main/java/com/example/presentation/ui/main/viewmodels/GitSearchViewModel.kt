@@ -1,4 +1,4 @@
-package com.example.presentation.ui.main
+package com.example.presentation.ui.main.viewmodels
 
 import androidx.lifecycle.*
 import androidx.paging.Pager

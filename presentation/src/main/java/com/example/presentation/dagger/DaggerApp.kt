@@ -1,7 +1,6 @@
 package com.example.presentation.dagger
 
 import android.app.Application
-import com.example.presentation.dagger.ContextModule
 import com.example.presentation.ui.ApplicationComponent
 import com.example.presentation.ui.DaggerApplicationComponent
 

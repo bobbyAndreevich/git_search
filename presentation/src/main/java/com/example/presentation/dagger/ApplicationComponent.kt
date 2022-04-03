@@ -1,12 +1,11 @@
 package com.example.presentation.ui
 
-import android.app.Application
 import com.example.presentation.dagger.ContextModule
 import com.example.presentation.dagger.GitModule
+import com.example.presentation.dagger.GoogleModule
 import com.example.presentation.ui.login.LoginActivity
-import com.example.presentation.ui.main.GitSearchFragment
-import com.example.presentation.ui.main.MainActivity
-import dagger.BindsInstance
+import com.example.presentation.ui.main.views.GitSearchFragment
+import com.example.presentation.ui.main.views.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 

@@ -1,8 +1,7 @@
-package com.example.presentation
+package com.example.presentation.utils
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import com.example.presentation.ui.login.SingleLiveEvent
 
 class LiveMessageEvent<T> : SingleLiveEvent<(T.() -> Unit)?>() {
 

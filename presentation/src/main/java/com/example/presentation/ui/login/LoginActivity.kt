@@ -4,9 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.presentation.ui.main.MainActivity
+import com.example.presentation.ui.main.views.MainActivity
 import com.example.presentation.R
 import com.example.presentation.dagger.DaggerApp
+import com.example.presentation.utils.ActivityNavigation
 import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject
 

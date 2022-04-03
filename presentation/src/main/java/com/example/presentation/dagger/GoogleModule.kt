@@ -1,4 +1,4 @@
-package com.example.presentation.ui
+package com.example.presentation.dagger
 
 import android.content.Context
 import com.google.android.gms.auth.api.signin.GoogleSignIn

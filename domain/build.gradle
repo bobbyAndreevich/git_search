@@ -40,6 +40,4 @@ android {
 
 dependencies {
     implementation("androidx.paging:paging-runtime:3.1.1")
-    implementation 'io.reactivex:rxjava:1.3.8'
-    implementation 'io.reactivex:rxandroid:1.2.1'
 }

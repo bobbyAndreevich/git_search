@@ -1,4 +1,4 @@
-package com.example.presentation.ui.main
+package com.example.presentation.ui.main.views
 
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -11,6 +11,9 @@ import androidx.lifecycle.*
 import androidx.paging.LoadState
 import com.example.presentation.R
 import com.example.presentation.dagger.DaggerApp
+import com.example.presentation.ui.main.viewmodels.GitSearchViewModel
+import com.example.presentation.ui.main.adapters.GitUsersAdapter
+import com.example.presentation.ui.main.adapters.UsersLoaderStateAdapter
 import kotlinx.android.synthetic.main.fragment_git_search.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collectLatest
@@ -44,6 +47,21 @@ class GitSearchFragment : Fragment(R.layout.fragment_git_search), LifecycleOwner
             UsersLoaderStateAdapter()
         )
 
+        adapter.addLoadStateListener {
+            users_list.isVisible = it.refresh != LoadState.Loading
+            progress.isVisible = it.refresh != LoadState.Loading
+        }
+
+        observeSearchView()
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.users.collectLatest {
+                adapter.submitData(it)
+            }
+        }
+    }
+
+    private fun observeSearchView() {
         git_search.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean = false
             override fun onQueryTextChange(newText: String?): Boolean {
@@ -62,17 +80,6 @@ class GitSearchFragment : Fragment(R.layout.fragment_git_search), LifecycleOwner
                 return false
             }
         })
-
-        adapter.addLoadStateListener {
-            users_list.isVisible = it.refresh != LoadState.Loading
-            progress.isVisible = it.refresh != LoadState.Loading
-        }
-
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.users.collectLatest {
-                adapter.submitData(it)
-            }
-        }
 
         viewModel.searchQuery
             .flowWithLifecycle(lifecycle, Lifecycle.State.CREATED)
